@@ -19,7 +19,7 @@ This project walks you through building a robust CI/CD pipeline to automatically
 
 ![Actual architecture diagram!](https://github.com/akshayshelke1/automated-cicd-pipeline/blob/main/architecture/architecture.png)
 
-1. Developer Workstations:
+1.  #### Developer Workstations: #### 
 Developers write and commit code to a GitHub repository, kicking off the automation process.
 
 - Number 2 Continuous Integration:
