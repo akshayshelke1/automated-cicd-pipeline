@@ -22,7 +22,7 @@ Service Mesh: Managed by Istio for advanced traffic control and observability.
 CI/CD Pipeline: Managed with Jenkins and ArgoCD.
 Monitoring: Implemented using Prometheus and Grafana.
 
-!(https://github.com/akshayshelke1/automated-cicd-pipeline/blob/main/architecture_diagram.png)
+![Actual architecture diagram!](https://github.com/akshayshelke1/automated-cicd-pipeline/blob/main/architecture_diagram.png)
 
 ### Pre-requisites
 AWS Account.
