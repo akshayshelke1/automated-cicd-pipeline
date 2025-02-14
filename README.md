@@ -16,13 +16,44 @@ This project walks you through building a robust CI/CD pipeline to automatically
 
 
 ## Architecture Overview
-Infrastructure as Code: AWS resources are provisioned using Terraform.
-Containerized Microservices: Deployed on EKS.
-Service Mesh: Managed by Istio for advanced traffic control and observability.
-CI/CD Pipeline: Managed with Jenkins and ArgoCD.
-Monitoring: Implemented using Prometheus and Grafana.
 
 ![Actual architecture diagram!](https://github.com/akshayshelke1/automated-cicd-pipeline/blob/main/architecture/architecture.png)
+
+- 1. Developer Workstations:
+Developers write and commit code to a GitHub repository, kicking off the automation process.
+
+- 2. Continuous Integration:
+Jenkins automatically pulls the latest code from GitHub, builds the application, and runs tests to catch any issues early.
+It then creates Docker images of the application and pushes them to a Docker Registry, like Amazon ECR, ensuring consistent and reliable deployments.
+
+- 3. Infrastructure as Code:
+Terraform handles the infrastructure setup on AWS, which includes:
+
+  - VPC: For secure networking.
+  - IAM Roles and Policies: Ensuring proper security and permissions.
+  - EKS Cluster: To run the Kubernetes workloads.
+  - RDS: For managing persistent storage needs.
+
+- 4. Continuous Deployment:
+Jenkins takes the Docker images from the registry and deploys them to the Amazon EKS cluster using Kubernetes manifests or Helm charts.
+Istio is used as a service mesh to efficiently manage traffic between microservices, enhancing communication and security.
+
+- 5. Service Mesh with Istio:
+Istio plays a key role in managing traffic, securing communication with mutual TLS (mTLS), and providing observability into the microservices environment.
+The Istio Ingress Gateway manages all external access to the services, ensuring secure and reliable routing.
+
+- 6. Monitoring and Logging:
+Prometheus collects detailed metrics from the Kubernetes cluster and Istio, providing real-time insights.
+Grafana visualizes these metrics through interactive dashboards.
+Fluentd centralizes logging, sending logs to Amazon CloudWatch or Elasticsearch for easy monitoring and troubleshooting.
+Alertmanager integrates with Prometheus to trigger alerts when issues are detected.
+
+- 7. Continuous Feedback:
+Alertmanager notifies the team through Slack or email, ensuring quick response times to any incidents.
+Jenkins provides continuous feedback on build and deployment statuses, keeping developers in the loop throughout the CI/CD pipeline.
+This setup ensures a seamless flow from code commit to deployment, with robust monitoring, security, and feedback mechanisms, making the application scalable, secure, and highly observable.
+
+
 
 ### Pre-requisites
 AWS Account.
