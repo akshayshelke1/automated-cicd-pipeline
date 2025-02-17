@@ -1,5 +1,5 @@
 # automated-cicd-pipeline
-Automated CI/CD Pipeline with Infrastructure as Code, Microservices Integration, Service Mesh Networking, and End-to-End Monitoring
+Automated CI/CD Pipeline with Infrastructure as Code, Microservices Integration, Service Mesh Networking, and End-to-End Monitoring on AWS.
 
 # AWS-DevOps-Project-Automated-CI-CD-Pipeline
 This project walks you through building a robust CI/CD pipeline to automatically deploy a microservices application on AWS using Kubernetes (EKS). It leverages Istio for service mesh and Jenkins for CI/CD automation. You'll learn how to provision infrastructure with Terraform and manage microservices in a secure, scalable, and highly observable setup.
